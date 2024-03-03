@@ -35,8 +35,8 @@ CREATE TABLE IF NOT EXISTS Albums (
 CREATE TABLE IF NOT EXISTS Tracks (
     track_id   SERIAL      PRIMARY KEY,
     track_name VARCHAR(70) NOT NULL,
-    duration   INTERVAL    NULL,
-    album_id   INTEGER     DEFAULT NULL REFERENCES Albums
+    duration   INTERVAL    DEFAULT '00:00:00' NOT NULL,
+    album_id   INTEGER     NOT NULL REFERENCES Albums
 );
 
 /* Таблица жанров исполнителей: */
